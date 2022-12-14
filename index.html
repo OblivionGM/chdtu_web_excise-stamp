@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <title>Генератор акцизної марки</title>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="conteiner">
+
+            <h1 class="title">Генератор акцизної марки</h1>
+            
+            <form class="form" action="#">
+
+                <div class="form__item">
+                    <label class="form__label" for="square">Код виробника</label>
+                    <input class="form__input" type="number" name="prod" id="prod">
+                </div>
+
+                <div class="form__item">
+                    <label class="form__label" for="square">Регіон виробника</label>
+                    <input class="form__input" type="number" name="reg" id="reg">
+                </div>
+
+                <div class="form__item">
+                    <label class="form__label" for="square">Дата виготовлення марки, MM/YY</label>
+                    <input class="form__input" type="text" name="date" id="date">
+                </div>
+
+                <div class="form__item">
+                    <label class="form__label" for="startHum">Сума ставки акцизу марки</label>
+                    <input class="form__input" type="number" name="tax" id="tax">
+                </div>
+
+                <div class="form__item">
+                    <label class="form__label" for="endHum">Серія марки</label>
+                    <input class="form__input" type="text" name="serial" id="serial">
+                </div>
+
+                <div class="form__item">
+                    <label class="form__label" for="temp">Номер марки</label>
+                    <input class="form__input" type="number" name="num" id="num">
+                </div>
+
+                <input class="form__submit" type="button" onclick="createStamp()" value="Розрахувати">
+
+            </form>
+
+            <div class="result">
+                <h3 class="result__title title">Результат</h3>
+
+                <div class="stamp">
+
+                    <div class="stamp__content">
+
+                        <div class="stamp__info">
+
+                            <div class="stamp__barcode">
+                                <span class="stamp__prod">0000000000</span>
+                                <div class="barcode" id="barcode"></div>
+                            </div>
+
+                            <div class="stamp__detail">
+                                <div class="stamp__about">
+                                    <span class="stamp__region">00</span>
+                                    <span class="stamp__date">00/00</span>
+                                </div>
+
+                                <span class="stamp__tax">0,000 грн</span>
+                            </div>
+
+                        </div>
+
+                        <div class="stamp__excise">
+                            <img src="/img/stamp.jpg" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <script src="/scripts/jquery-barcode.min.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>
